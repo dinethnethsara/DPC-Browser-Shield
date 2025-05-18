@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Warning</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffebee;
+      color: #c62828;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+    }
+    h1 {
+      color: #d32f2f;
+      margin-bottom: 15px;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    .blocked-url {
+      font-weight: bold;
+      word-break: break-all;
+      color: #555;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo img {
+      max-width: 80px;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #757575;
+    }
+    a {
+        color: #1976d2;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="../icons/icon128.png" alt="DPC Shield Logo">
+    </div>
+    <h1>⚠️ Phishing Site Blocked</h1>
+    <p>DPC Shield has blocked access to the following potentially dangerous website:</p>
+    <p class="blocked-url" id="blocked-url-display"></p>
+    <p>This site was identified as a potential phishing threat, attempting to steal your personal information such as passwords, credit card details, or other sensitive data.</p>
+    <p><strong>It is strongly recommended that you do not proceed to this site.</strong></p>
+    <p>If you believe this is a mistake, you can choose to proceed at your own risk, but be extremely cautious.</p>
+    <div class="footer">
+      <p>Protected by DPC Shield - Developed by Dineth Nethsara for DPC Media Unit</p>
+      <p><a href="#" onclick="window.history.back(); return false;">Go Back to Safety</a></p>
+    </div>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const blockedUrl = urlParams.get('blocked');
+    if (blockedUrl) {
+      document.getElementById('blocked-url-display').textContent = decodeURIComponent(blockedUrl);
+    }
+  </script>
+</body>
+</html>

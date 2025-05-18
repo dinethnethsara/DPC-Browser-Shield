@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="#2c3e50">
+  <path d="M64 5L13 26V66C13 98.48 34.72 126.96 64 128C93.28 126.96 115 98.48 115 66V26L64 5ZM64 117.33C41.92 114.04 24 89.57 24 66V36.24L64 16.96L104 36.24V66C104 89.57 86.08 114.04 64 117.33Z"/>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="60" fill="#2ecc71" font-family="sans-serif" font-weight="bold">DPC</text>
+</svg>

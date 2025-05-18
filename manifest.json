@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "DPC Shield - All-in-One Protection",
+  "version": "1.0.0",
+  "description": "Anti-malware, Anti-ads, and Anti-phishing protection powered by DPC Media Unit, developed by Dineth Nethsara",
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  "permissions": [
+    "storage",
+    "webRequest",
+    "webNavigation",
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
